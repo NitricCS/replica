@@ -33,7 +33,7 @@ class Logger():
         makedirs(path.dirname(path.abspath(self.path)), exist_ok=True)
         f = open(self.path, "a", encoding="utf-8")
         if type == "rd":        # dir removed
-            log_text = "Removed directory " + obj + " and all its contents from replica"
+            log_text = "Removed directory " + obj + " from replica"
         elif type == "ad":      # dir copied
             log_text = "Created new subdirectory " + obj + " in replica"
         elif type == "rf":      # file removed
