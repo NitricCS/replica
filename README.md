@@ -10,7 +10,7 @@ Features:
 
 Usage:
 ```
-replica [-h] SOURCE_DIR DESTINATION_DIR SYNC_PERIOD
+replica.py [-h] SOURCE_DIR DESTINATION_DIR SYNC_PERIOD
 
 Creates a replica of a specified directory
 
