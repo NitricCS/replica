@@ -25,15 +25,19 @@ def cli():
     # Extracting arguments from CL
     args = parse_arguments()
     
-    abs_path = os.path.abspath(args.source_dir)
-    if not os.path.exists(abs_path):
-        print("Specified source directory " + abs_path + " doesn't exist.\nPlease try again with a valid source.")
+    abs_src = os.path.abspath(args.source_dir)
+    if not os.path.exists(abs_src):
+        print("Specified source directory " + abs_src + " is invalid or doesn't exist.\nPlease try again with a valid source.")
         sys.exit()
     src = args.source_dir
     
-    abs_path = os.path.abspath(args.dst_dir)
-    if not os.path.exists(abs_path):
-        print("Specified destination directory " + abs_path + " doesn't exist and will be created.")
+    abs_dst = os.path.abspath(args.dst_dir)
+    if not os.path.exists(abs_dst):
+        print("Specified destination directory " + abs_dst + " is invalid or doesn't exist.\nPlease try again with a valid destination for replica.")
+        sys.exit()
+    if abs_src == abs_dst:
+        print("Source and destination directories cannot be the same.\nPlease enter different paths.")
+        sys.exit()
     dst = args.dst_dir
 
     try:
