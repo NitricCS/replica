@@ -12,7 +12,7 @@ def parse_arguments():
     parser.add_argument(
         "dst_dir",
         metavar="DESTINATION_DIR",
-        help="path to directory to put replica into; will be created if nonexistent"
+        help="path to directory to put replica into"
     )
     parser.add_argument(
         "period",
