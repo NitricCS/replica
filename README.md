@@ -22,3 +22,11 @@ positional arguments:
 optional arguments:
   -h, --help       show help message and exit
 ```
+
+Script takes both relative and absolute paths as arguments.
+
+The maximum sync period depends on each individual machine, but is rather large.
+
+
+Please note that, according to the task, the files are not updated based on which one is newer.
+In case the script locates two files named the same in source and replica directories, the file in replica will be substituted with the file from source.
