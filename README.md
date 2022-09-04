@@ -15,7 +15,7 @@ Creates a replica of a specified directory
 
 positional arguments:
   SOURCE_DIR       path to source directory to be replicated
-  DESTINATION_DIR  path to directory to put replica into; will be created if nonexistent
+  DESTINATION_DIR  path to directory to put replica into
   SYNC_PERIOD      syncronization period in seconds
 
 optional arguments:
