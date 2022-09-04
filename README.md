@@ -7,6 +7,7 @@ A command line Python script that syncronizes two directories.
 Features:
 - One-way sync (source acts as a complete reference)
 - Periodic sync (period set in CLI)
+- Creates a logs/ directory and logs all file actions while syncing
 
 Usage:
 ```
