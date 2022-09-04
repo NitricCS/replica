@@ -1,6 +1,4 @@
-# Replica — Veeam Task
-A solution for a Veeam test task 2 for Developer in QA.
-
+# Replica
 A command line Python script that syncronizes two directories.
 
 
@@ -29,5 +27,5 @@ Script takes both relative and absolute paths as arguments.
 The maximum sync period depends on each individual machine, but is rather large.
 
 
-Please note that, according to the task, the files are not updated based on which one is newer.
+Please note that the files are not updated based on which one is newer.
 In case the script locates two files named the same in source and replica directories, the file in replica will be substituted with the file from source.
