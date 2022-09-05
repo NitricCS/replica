@@ -1,11 +1,12 @@
 import os
+import stat
 from shutil import copy2, rmtree
 
 ##### Directory class
 class Directory():
     def __init__(self, p):
         self.path = os.path.abspath(p)
-    
+
     # Parse a directory
     def get_contents(self):
         files = []
@@ -34,7 +35,7 @@ class Directory():
     def removedir(self, rel_path):
         absolute_path = os.path.join(self.path, rel_path)
         if os.path.exists(absolute_path):
-            rmtree(absolute_path)
+            rmtree(absolute_path, onerror=remove_readonly)
     
     # Copy a file from defined source to current directory
     def cpfile(self, src, filename):
@@ -65,3 +66,8 @@ def get_diff(dir1, dir2):
 def get_equal(dir1, dir2):
     eq_files = list(set(dir1).intersection(dir2))
     return eq_files
+
+# Attempt to remove read-only bit on Windows
+def remove_readonly(func, path, _):
+    os.chmod(path, stat.S_IWRITE)
+    func(path)
